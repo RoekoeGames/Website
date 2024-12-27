@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #44b2c9, #8599fd);
+            background: linear-gradient(135deg, #f6d365, #fda085);
             color: #333;
             overflow: hidden;
         }
@@ -61,7 +61,7 @@
             height: 100px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            animation: float 10s infinite ease-in-out;
+            animation: float infinite ease-in-out;
         }
 
         .frosted-layer {
@@ -83,7 +83,7 @@
                 transform: translate(30px, -30px);
             }
             100% {
-                transform: translate(0, 0);
+                transform: translate(-30px, 30px);
             }
         }
 
@@ -102,7 +102,7 @@
     <div class="content">
         <h1>Roekoe Games</h1>
         <p>We're making a game, but we're not talking about it for now.</p>
-        <p class="hint">(Stay tuned)</p>
+        <p class="hint">(Stay tuned for more surprises!)</p>
     </div>
     <div class="floating-shapes" id="shapes"></div>
     <div class="frosted-layer"></div>
@@ -117,8 +117,7 @@
         shape.classList.add('shape');
         shape.style.top = `${Math.random() * 100}%`;
         shape.style.left = `${Math.random() * 100}%`;
-        shape.style.animationDelay = `${Math.random() * 5}s`;
-        shape.style.transform = `scale(${Math.random() * 1 + 0.5})`;
+        shape.style.animationDuration = `${Math.random() * 5 + 5}s`;
         shapesContainer.appendChild(shape);
     }
 
@@ -133,15 +132,6 @@
 
         shapesContainer.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
     });
-
-    // Automatically move shapes
-    setInterval(() => {
-        const shapes = document.querySelectorAll('.shape');
-        shapes.forEach(shape => {
-            shape.style.top = `${Math.random() * 100}%`;
-            shape.style.left = `${Math.random() * 100}%`;
-        });
-    }, 5000);
 </script>
 </body>
 </html>
